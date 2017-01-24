@@ -1,0 +1,19 @@
+{
+    "name": "estev_000/solid",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "authors": [
+        {
+            "name": "Estevam de Moraes Rodrigues",
+            "email": "estevam.mrodrigues@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Solid\\Html\\": "src"
+        }
+    } 
+}

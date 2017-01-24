@@ -1,0 +1,18 @@
+{
+  "name": "duckbill/mvc",
+  "require":{
+    "php":">=5.6"
+  },
+  "authors":[
+    {
+      "name":"Estevam de Moraes Rodrigues",
+      "email": "estevam.mrodrigues@gmail.com"
+    }
+  ],
+  "autoload":{
+    "psr-4":{
+      "duckbill\\":"vendor/duckbill",
+      "App\\":"App"
+    }
+  }
+}

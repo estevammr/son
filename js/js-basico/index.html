@@ -1,0 +1,227 @@
+<script>
+  var array1 = new Array(5,3,4,2,0,8);
+
+  function desc (a,b) {
+    if(a > b) {
+      return -1;
+    }
+    if(a < b) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+  array1.sort(desc);
+</script>
+
+<script>
+  var arrayIndex = ["Branco", "Verde", "Amarelo", "Verde", "Prata"];
+  var retorno = arrayIndex.lastIndexOf("Verde",2);
+  
+</script>
+
+<input type="text" id="search">
+<button onclick="search();">search</button>
+<br>
+<strong>Result: </strong>
+<br>
+<span id="result"></span>
+
+<script>
+  function search() {
+  var exampleSearch = [
+    "Programar", 
+    "Estudar",
+    "Tomar breja"
+  ];
+  var search = document.getElementById("search").value;
+  var testKey = null;
+  var result = "";
+
+  for (var key in exampleSearch) {
+    var auxArray = exampleSearch[key].split(" ");
+    for(var key2 in auxArray) {
+      if(auxArray.indexOf(search) > -1) {
+        if(testKey != key) {
+          testKey = key;
+          result += "<p>" + exampleSearch[key] + "</p>";
+        }
+      }
+    }
+  }
+
+  document.getElementById("result").innerHTML = result;
+}
+</script>
+
+<script type="text/javascript">
+  var exampleSearch = [
+    "Programar", 
+    "Estudar",
+    "Tomar breja"
+  ];
+
+  exampleSearch.forEach(function (value, key) {
+    document.write("<p>Key: " + key + " | Value: " + value + "</p>");
+
+  });
+</script>
+
+<script type="text/javascript">
+  if(3 < 2){
+    document.write("true");
+  }else{
+    document.write("false");
+  }
+</script>
+
+<script type="text/javascript">
+  function calculator (a,b,operator) {
+    if(operator === "+") {
+      return a + b;
+    }else if(operator === "-"){
+      return a - b;
+    }else if (operator === "*"){
+      return a * b;
+    } else {
+      return a / b;
+    }
+  }
+
+  document.write(calculator(5,4,"/"));
+</script>
+
+<br>
+<br>
+<script type="text/javascript">
+  function troco(value, cash) {
+    if(value > cash) {
+      return "Erro -> O valor do produto eh maior, libera mais grana ai malandro kk";
+    } else if(value === cash) {
+      return "Nao possui troco maneh";
+    }
+    return "Troco -> " + (cash - value);
+  }
+
+  document.write(troco(20.35, 15.35));
+</script>
+
+<script type="text/javascript">
+  var color = "orange";
+
+  switch (color) {
+    case "orange":
+      document.write("Color: Orange");
+      break;
+    case "blue":
+      document.write("Color: Blue");
+      break;
+    default:
+      document.write("No color"); 
+  }
+</script>
+
+<br>
+<br>
+
+<input type="text" id="weight" placeholder="Weight">
+<br>
+<select id="fruits">
+  <option value="apple">Apple</option>
+  <option value="watermelon">Watermelon</option>
+  <option value="lemon">Lemon</option>
+</select>
+<br>
+<button onclick="balance();">to weight</button>
+<span id="result2"></span>
+<script type="text/javascript">
+  function balance() {
+  var fruits = document.getElementById("fruits").value;
+  var weight = document.getElementById("weight").value;
+
+  if(!weight) {
+    document.getElementById("result2").innerHTML = "Please fill weight";
+    return;
+  }
+  switch (fruits) {
+    case "apple":
+      document.getElementById("result2").innerHTML = "$ " + weight * 2.85;
+      break;
+    case "watermelon":
+      document.getElementById("result2").innerHTML = "$ " + weight * 3.74;
+      break;
+    case "lemon":
+      document.getElementById("result2").innerHTML = "$ " + weight * 7.74;
+      break;
+    default:
+      document.getElementById("result2").innerHTML = "Product not registered";
+      break;
+  }
+  }
+</script>
+
+
+<br>
+<br>
+<br>
+
+<script type="text/javascript">
+  for(var y = 0; y <= 10; y++) {
+    document.write(y + "<br>");
+  }
+</script>
+
+<script type="text/javascript">
+  forArray = [
+    "Vitorino bicha",
+    "Bicha Bicha, ops Miguel"
+  ];
+
+  for(var y = 0; y < forArray.length; y++) {
+    document.write(forArray[y] + "<br>");
+  }
+</script>
+
+<br>
+<br>
+<br>
+<h2> do while</h2>
+<script type="text/javascript">
+  var num = 10;
+  do{
+    num = num -1;
+    document.write(num);
+  }while(num > 0);
+</script>
+
+<h2>while</h2>
+
+<script type="text/javascript">
+var num = 10;
+  while(num > 0) {
+    num = num -1;
+    document.write(num);
+  }
+</script>
+<br>
+<br>
+<h2>Functions</h2>
+<script type="text/javascript">
+  function add(a,b) {
+    return a + b;
+  }
+
+  console.log(add(5,7));
+
+  var factorial = function(n) {
+    var fac = 1;
+
+    for(var y = n; y >=1; y--){
+      fac *= y;
+    }
+    return fac;
+  };
+
+  console.log(factorial(4));
+</script>

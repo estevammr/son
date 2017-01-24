@@ -1,0 +1,23 @@
+{
+  "name": "CodeAgenda",
+  "description": "Agenda Telefônica",
+  "main": "",
+  "authors": [
+    "Lucas Mandelli <lucasmandelli@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lucasmandelli/lumen",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "fontawesome#^4.5.0"
+  }
+}
