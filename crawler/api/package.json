@@ -1,0 +1,17 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Estevam Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^16.1.0",
+    "mongoose": "^4.8.1",
+    "node-horseman": "^3.2.0",
+    "phantomjs": "^2.1.7"
+  }
+}
