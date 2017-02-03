@@ -3,10 +3,10 @@
 const mongoose = require('mongoose');
 
 const Urls = new mongoose.Schema({
-  url: {
-    type: String,
-    required: false
-  }
+    url: {
+        type: String,
+        required: false
+    }
 });
 
-module.export = mongoose.model('urls', Urls);
+module.exports = mongoose.model('urls', Urls);
