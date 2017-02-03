@@ -4,25 +4,27 @@ const Hapi = require('hapi');
 const mongoose = require('mongoose');
 const Horseman = require('node-horseman');
 
-const server = new Hapi.Server();
+const server = new Hapi.Server({ debug: { request: ['error', 'timestamp'] } });
 server.connection({
-  port: 3000
+  port: 3004
 });
 
 const db = mongoose.connect('mongodb://localhost/crawler').connection;
 const horseman = new Horseman();
+const Urls = require('./urls');
 
 db.on('error', (err) => {
   console.log(`Mongoose error => ${err}`);
 });
 
+
 server.route({
   method: 'GET',
   path: '/url',
-  handler: (req, replay) => {
+  handler: (req, reply) => {
     horseman
       .open('http://www.boavistaservicos.com.br/')
-      .evaluate(function() {
+      .evaluate(function() {  
         $ = window.$ || window.jQuery;
 
         var data = [];
@@ -30,7 +32,7 @@ server.route({
         $('a').each(function(index, el) {
           
           var url = $(el).attr('href');
-        
+          
           data.push({
             url: url
           });
@@ -39,7 +41,17 @@ server.route({
         return data;
       })
       .then(function(res) {
-        replay(res);
+        Urls.insertMany(res)
+          .then((urls) => {
+            console.log(`OK`);
+            return reply(res);
+          })
+          .catch((err) => {
+            console.log(`Error => ${err}`);
+            reply({
+              'error': 'MongoDB'
+            });
+          });
       })
       .catch((err) => {
         console.log(`There is an error => ${err}`);

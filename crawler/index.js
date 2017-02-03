@@ -3,11 +3,10 @@ const horseman = new Horseman();
 
 horseman
   .open('http://www.boavistaservicos.com.br/')
-  .click('a[href]')
+  .click('a')
   .waitForNextPage()
-  .count('strong.normal')
-  .then(function(status, counter) {
-    console.log(`Count attributes => ${counter}`);
+  .then(function(status) {
+    console.log(`${status}`);
   })
   .catch((err) => {
     console.log(`There is an error => ${err}`);
