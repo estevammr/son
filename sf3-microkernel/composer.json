@@ -6,5 +6,7 @@
             "email": "estevam.mrodrigues@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "symfony/symfony": "^3.2"
+    }
 }
