@@ -1,0 +1,10 @@
+{
+    "name": "estev_000/sf3-microkernel",
+    "authors": [
+        {
+            "name": "Estevam de Moraes Rodrigues",
+            "email": "estevam.mrodrigues@gmail.com"
+        }
+    ],
+    "require": {}
+}
