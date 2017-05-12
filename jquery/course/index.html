@@ -3,13 +3,40 @@
 <head>
   <meta charset="utf-8">
   <title>jQuery</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
   <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+  <script type="text/javascript" src="js/functions.js"></script>
+  <script type="text/javascript" src="js/testenovo.js"></script>
 </head>
 <body>
-<header>
-  <h1 id="title"></h1>
-  <p id="desc"></p>
-</header>
-<script type="text/javascript" src="js/functions.js"></script>
+<!-- <div class="container">
+  <h2>Registration</h2>
+  <form action="" name="registration">
+
+    <label for="firstname">First Name</label>
+    <input type="checkbox" name="firstname[]" id="firstname" placeholder="John"/>
+
+    <label for="lastname">Last Name</label>
+    <input type="checkbox" name="firstname[]" id="lastname" placeholder="Doe"/>
+
+    <label for="email">Email</label>
+    <input type="checkbox" name="email[]" id="email" placeholder="john@doe.com"/>
+
+    <label for="password">Password</label>
+    <input type="checkbox" name="email[]" id="password" placeholder="******"/>
+
+    <button type="submit" id="buttonTeste">Register</button>
+
+  </form>
+</div> -->
+
+<form name="itemForm" id="itemForm" method="post">
+<input type="checkbox" name="check1" id="check1" class="require-one" value="1" />
+<input type="checkbox" name="check2" id="check2" class="require-one" value="2" />
+<input type="text" class="required" />
+<input type="submit" />
+</form>
 </body>
 </html>
