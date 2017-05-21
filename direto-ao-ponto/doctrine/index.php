@@ -18,5 +18,5 @@ $entityManager->flush();
 $categories = $entityManager->getRepository(Category::class)->findAll();
 
 foreach ($categories as $category) {
-  echo "Name : {$category->getName()}, Id: {$category->getId()}". "\n";
+  echo "Name : {$category->getName()}, Id : {$category->getId()}". "\n";
 }
