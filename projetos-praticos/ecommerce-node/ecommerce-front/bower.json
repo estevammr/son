@@ -1,0 +1,21 @@
+{
+  "name": "ecommerce-front",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Estevam de Moraes Rodrigues <estevam.mrodrigues@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/estevammr/son",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
