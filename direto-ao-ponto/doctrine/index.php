@@ -2,21 +2,27 @@
 
 use App\Entity\Category;
 
-require __DIR__.'/bootstrap.php';
+require __DIR__ . '/bootstrap.php';
 
-$category = new Category();
-$category->setName("Minha primeira categoria");
+//$category = new Category();
+//$category->setName("Minha primeira categoria");
+//
+//$category2 = new Category();
+//$category2->setName("Category 2");
+//
+//$category3 = new Category();
+//$category3->setName("Category 2");
 
-$category2 = new Category();
-$category2->setName("Category 2");
+//$entityManager->persist($category);
+//$entityManager->persist($category2);
+//$entityManager->persist($category3);
+//$entityManager->flush();
 
 $entityManager = getEntityManager();
-$entityManager->persist($category);
-$entityManager->persist($category2);
-$entityManager->flush();
+$categoria = $entityManager->getRepository('App\Entity\Category')->listar();
 
-$categories = $entityManager->getRepository(Category::class)->findAll();
+var_dump($categoria);
 
-foreach ($categories as $category) {
-  echo "Name: {$category->getName()}, Id : {$category->getId()}". "\n";
-}
+//foreach ($categories as $category) {
+//    echo "Name: {$category->getName()}, Id : {$category->getId()}" . "<br>";
+//}

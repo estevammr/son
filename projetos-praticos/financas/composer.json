@@ -1,0 +1,20 @@
+{
+    "name": "estev_000/financas",
+    "authors": [
+        {
+            "name": "Estevam de Moraes Rodrigues",
+            "email": "estevam.mrodrigues@gmail.com"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "0.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "EstevamFin\\": "src/"
+        }
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.6"
+    }
+}

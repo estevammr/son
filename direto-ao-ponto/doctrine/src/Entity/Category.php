@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 /**
- * @Entity
+ * @Entity(repositoryClass="CategoryRepository")
  * @Table(name="categories")
  */
 class Category
