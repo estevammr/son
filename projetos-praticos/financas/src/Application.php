@@ -21,6 +21,7 @@ class Application
 
     /**
      * Application constructor.
+     *
      * @param $serviceContainer
      */
     public function __construct(ServiceContainerInterface $serviceContainer)
@@ -77,7 +78,11 @@ class Application
     {
         $route = $this->service('route');
 
-        /** @var ServerRequestInterface $request */
+        /**
+* 
+         *
+ * @var ServerRequestInterface $request 
+*/
         $request = $this->service(RequestInterface::class);
 
         if (!$route) {
@@ -86,7 +91,7 @@ class Application
         }
 
         foreach ($route->attributes as $key => $value) {
-            $request = $request->withAttribute($key,$value);
+            $request = $request->withAttribute($key, $value);
         }
 
         $callable = $route->handler;

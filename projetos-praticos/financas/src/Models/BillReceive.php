@@ -11,10 +11,12 @@ namespace EstevamFin\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryCost extends Model
+class BillReceive extends Model
 {
     protected $fillable = [
-        "id",
-        "name"
+        'date_launch',
+        'name',
+        'value',
+        'user_id'
     ];
 }

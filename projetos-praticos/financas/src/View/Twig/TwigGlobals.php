@@ -7,13 +7,13 @@ use EstevamFin\Auth\AuthInterface;
 class TwigGlobals extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
 {
     /**
-    * @var AuthInterface
-    */
+     * @var AuthInterface
+     */
     private $auth;
 
     /**
-    * TwigGlobals constructor.
-    */
+     * TwigGlobals constructor.
+     */
     public function __construct(AuthInterface $auth)
     {
         $this->auth = $auth;

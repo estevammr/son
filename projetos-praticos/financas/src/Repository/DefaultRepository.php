@@ -52,7 +52,7 @@ class DefaultRepository implements RepositoryInterface
 
     public function update($id, array $data)
     {
-        $model = $this->find($id);
+        $model = $this->findInternal($id);
         $model->fill($data);
         $model->save();
         return $model;
@@ -60,7 +60,7 @@ class DefaultRepository implements RepositoryInterface
 
     public function delete($id)
     {
-        $model = $this->find($id);
+        $model = $this->findInternal($id);
         $model->delete();
     }
 
@@ -68,4 +68,19 @@ class DefaultRepository implements RepositoryInterface
     {
         return $this->model->where($field, '=', $value)->get();
     }
+
+    protected function findInternal($id)
+    {
+        return is_array($id) ? $model = $this->findOneBy($id) : $this->find((int)$id);
+    }
+
+    public function findOneBy(array $search)
+    {
+        $queryBuilder = $this->model;
+        foreach ($search as $field => $value) {
+            $queryBuilder = $queryBuilder->where($field, '=', $value);
+        }
+        return $queryBuilder->firstOrFail();
+    }
+
 }
