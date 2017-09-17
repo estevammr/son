@@ -29,11 +29,13 @@ $app
     )
     ->post(
         '/category-costs/store', function (ServerRequestInterface $request) use ($app) {
-            $data = $request->getParsedBody();
-            $repository = $app->service('category-cost.repository');
-            $repository->create($data);
-            return $app->redirect('/category-costs');
-        }, 'category-costs.store'
+        $data = $request->getParsedBody();
+        $repository = $app->service('category-cost.repository');
+        $auth = $app->service('auth');
+        $data['user_id'] = $auth->user()->getId();
+        $repository->create($data);
+        return $app->route('category-costs.list');
+    }, 'category-costs.store'
     )
     ->get(
         '/category-costs/{id}/edit', function (ServerRequestInterface $request) use ($app) {
