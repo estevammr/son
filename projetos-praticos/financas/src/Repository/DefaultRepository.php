@@ -58,6 +58,7 @@ class DefaultRepository implements RepositoryInterface
         return $model;
     }
 
+
     public function delete($id)
     {
         $model = $this->findInternal($id);
@@ -82,5 +83,4 @@ class DefaultRepository implements RepositoryInterface
         }
         return $queryBuilder->firstOrFail();
     }
-
 }
