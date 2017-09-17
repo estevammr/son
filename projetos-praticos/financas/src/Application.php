@@ -85,7 +85,7 @@ class Application
     {
         foreach ($this->befores as $callback) {
             $result = $callback($this->service(RequestInterface::class));
-            if($result instanceof ResponseInterface){
+            if($result instanceof ResponseInterface) {
                 return $result;
             }
         }
