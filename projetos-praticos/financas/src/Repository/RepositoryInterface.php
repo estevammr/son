@@ -17,4 +17,5 @@ interface RepositoryInterface
     public function update($id, array $data);
     public function delete($id);
     public function findByField(string $field,$value);
+    public function findOneBy(array $search);
 }
