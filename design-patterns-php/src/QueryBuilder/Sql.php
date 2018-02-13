@@ -6,14 +6,16 @@ class Sql implements Strategy
 {
     public function table(string $table) : Strategy
     {
-        
+        $this->table = $table;
+        return $this;
     }
     public function select($columns = '*') : Strategy 
     {
-
+        $this->sql = sprintf('SELECT * FROM %s;', $thus->table);
+        return $this;
     }
     public function getQuery() : string
     {
-
+        return $this->sql;
     }
 }
