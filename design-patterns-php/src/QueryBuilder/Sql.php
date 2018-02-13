@@ -11,7 +11,7 @@ class Sql implements Strategy
     }
     public function select($columns = '*') : Strategy 
     {
-        $this->sql = sprintf('SELECT * FROM %s;', $thus->table);
+        $this->sql = sprintf('SELECT * FROM %s;', $this->table);
         return $this;
     }
     public function getQuery() : string
