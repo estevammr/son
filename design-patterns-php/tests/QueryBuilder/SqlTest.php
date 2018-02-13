@@ -31,7 +31,7 @@ class SqlTest extends \PHPUnit_Framework_TestCase
         $sql = new Sql();
 
         $query = $sql->table('users')
-            ->select(['login, password'])
+            ->select(['login', 'password'])
             ->getQuery();
 
             $this->assertEquals('SELECT login, password FROM users;', $query);
