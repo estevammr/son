@@ -11,7 +11,10 @@ class Sql implements Strategy
     }
     public function select($columns = '*') : Strategy 
     {
-        $this->sql = sprintf('SELECT * FROM %s;', $this->table);
+        if (is_array($columns)) {
+            $columns = implode(', ', $columns);
+        }
+        $this->sql = sprintf('SELECT %s FROM %s;', $columns, $this->table);
         return $this;
     }
     public function getQuery() : string

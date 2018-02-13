@@ -14,4 +14,26 @@ class SqlTest extends \PHPUnit_Framework_TestCase
 
             $this->assertEquals('SELECT * FROM users;', $query);
     }
+
+    public function testSelectQueryWithColumns()
+    {
+        $sql = new Sql();
+
+        $query = $sql->table('users')
+            ->select('login, password')
+            ->getQuery();
+
+            $this->assertEquals('SELECT login, password FROM users;', $query);
+    }
+
+    public function testSelectQueryWithColumnsArray()
+    {
+        $sql = new Sql();
+
+        $query = $sql->table('users')
+            ->select(['login, password'])
+            ->getQuery();
+
+            $this->assertEquals('SELECT login, password FROM users;', $query);
+    }
 }
